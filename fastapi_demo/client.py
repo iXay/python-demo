@@ -16,9 +16,12 @@ async def send_async_get_request(url):
             print(f"An error occurred: {e}")
 
 
-if __name__ == "__main__":
+async def ping():
     # Replace with the actual URL you need to send an async GET request to
     url = "http://127.0.0.1:8000/ping"
+    await send_async_get_request(url)
 
+
+if __name__ == "__main__":
     # Run the event loop to execute the async function
-    asyncio.run(send_async_get_request(url))
+    asyncio.run(ping())
